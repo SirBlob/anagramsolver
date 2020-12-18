@@ -13,4 +13,5 @@ pip install pyenchant
 ~~1. Ability to choose to keep words that have no definitions~~ (Done 12/18/2020)
 
 ~~2. Check for special character (input handling)~~ (Done 12/18/2020)
+
 3. Option to create all words up to length
