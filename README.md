@@ -12,3 +12,4 @@ pip install pyenchant
 
 1. Ability to choose to keep words that have no definitions
 2. Check for special character (input handling)
+3. Option to create all words up to length
