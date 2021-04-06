@@ -1,25 +1,27 @@
-import itertools #fast library of tools
+from itertools import *  #fast library of tools
 import enchant #word spell checker
+from termcolor import colored as clrd #color to output
 
 while True:
     letter = input("Enter the words or letters to use.\n")
     if letter.isalpha(): #Checks for valid characters
-        length = input("Enter the length of each word.\n")
+        length = input("Enter the length of word to stop at.\nFor Example: If length = 3 then words will be created up to 3 length.\n")
         if length.isdigit(): #Checks for valid digits
             if len(letter) >= int(length): #Check if amount of letters is greater then or equal to length
                 break
             else:
-                print("The length must be less than the amount of letters.")
+                print(clrd("The length must be less than the amount of letters.", "red"))
         else:
-            print("Please enter a valid integer.\n")
+            print(clrd("Please enter a valid integer.\n", "red"))
     else:
-        print("Please enter valid characters from A-Z.\n")
+        print(clrd("Please enter valid characters from A-Z.\n", "red"))
 
 #Initialize 
 allwords = []
 realwords = [] 
 
-words = list(itertools.permutations(letter.lower(), int(length)))
+#words = list(permutations(letter.lower(), int(length))) #Single Length so if 5 is chosen then only words of 5 length will be created
+words = list(chain.from_iterable(permutations(letter.lower(), i) for i in range (1, int(length)))) #Length of words up to input length
 spcheck = enchant.Dict("en_US") #Spell Checker using the an english dictionary
 
 for i in range(0, len(words)):
@@ -42,8 +44,8 @@ while True:
             print(realwords)
             break
         else:
-            print("Please enter only 1 or 2.\n")
+            print(clrd("Please enter only 1 or 2.\n", "red"))
     else:
-        print("Please enter only 1 or 2.\n")
+        print(clrd("Please enter only 1 or 2.\n", "red"))
 
     
