@@ -14,4 +14,6 @@ pip install pyenchant
 
 ~~2. Check for special character (input handling)~~ (Done 12/18/2020)
 
-3. Option to create all words up to length
+~~3. Option to create all words up to length~~ (Done 4/5/2021)
+
+~~4. Added color to error text~~ (Done 4/5/2021)
